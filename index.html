@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu te amo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #loading-bar {
+            width: 300px;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #progress {
+            width: 0;
+            height: 100%;
+            background-color: #ff69b4;
+            transition: width 3s linear;
+        }
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff69b4;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="loading-bar">
+            <div id="progress"></div>
+        </div>
+        <div id="message">Eu te amo ❤️</div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('progress').style.width = '100%';
+                setTimeout(function() {
+                    document.getElementById('message').style.opacity = '1';
+                }, 3000);
+            }, 100);
+        };
+    </script>
+</body>
+</html>
